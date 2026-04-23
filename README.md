@@ -31,16 +31,6 @@ Also, this:
 
 In settings, edit under the IPv4 tab. Address = 172.18.0.100, Netmask = 255.255.255.0 (???)
 
-## XTion RGBD cameras
-Follow Linux installation at [https://github.com/mgonzs13/ros2_asus_xtion](https://github.com/mgonzs13/ros2_asus_xtion)
-
-In `/opt/ros/humble/share/openni2_camera/launch/camera_With_cloud_launch.py` I specify a device ID (Either #1 or #2).
-
-I run `ros2 launch asus_xtion asus_xtion.launch.py` with `namespace:=<cameranamespace>`.
-I run nav2 with the a params file (`/opt/ros/humble/share/nav2_bringup/params/nav2_params.yaml`) with an added `obstacle_layer`.
-
-Note: when rviz-ualizing the pointcloud, turn the expected QoS to BEST_EFFORT.
-
 ### Test
 `tcpdump` - look for stuff coming from the LIDAR
 `ping 172.18.0.10`
@@ -51,6 +41,16 @@ Note: when rviz-ualizing the pointcloud, turn the expected QoS to BEST_EFFORT.
 sudo usermod -aG dialout $USER
 newgrp dialout
 ```
+
+## XTion RGBD cameras
+Follow Linux installation at [https://github.com/mgonzs13/ros2_asus_xtion](https://github.com/mgonzs13/ros2_asus_xtion)
+
+In `/opt/ros/humble/share/openni2_camera/launch/camera_With_cloud_launch.py` I specify a device ID (Either #1 or #2).
+
+I run `ros2 launch asus_xtion asus_xtion.launch.py` with `namespace:=<cameranamespace>`.
+I run nav2 with the a params file (`/opt/ros/humble/share/nav2_bringup/params/nav2_params.yaml`) with an added `obstacle_layer`.
+
+Note: when rviz-ualizing the pointcloud, turn the expected QoS to BEST_EFFORT.
 
 ## SSH
 ### Setup
